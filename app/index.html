@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Leonida Legend — GTA VI Trophy Guide &amp; Tracker</title>
+<meta name="description" content="Offline guide and tracker for all 55 Grand Theft Auto VI PlayStation 5 trophies: cited guides, roadmap to the platinum, missable flags, checklist with saved progress.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="hero">
+  <div class="hero-inner">
+    <p class="kicker">Grand Theft Auto VI &middot; PlayStation 5 &middot; 55 trophies</p>
+    <h1>Leonida Legend</h1>
+    <p class="sub">The full trophy guide and tracker — every trophy with its official name, description and grade, a guide in our own words with its source beside it, a roadmap to the platinum, and a checklist that remembers your progress. Works offline; nothing leaves your browser.</p>
+    <div class="progress-wrap" aria-label="Overall progress">
+      <div class="progress-bar"><div class="progress-fill" id="progressFill" style="width:0%"></div></div>
+      <p class="progress-text"><strong id="progressCount">0 of 55 earned</strong> &middot; <span id="progressByGrade"></span></p>
+    </div>
+  </div>
+</header>
+
+<nav class="tabs" aria-label="Sections">
+  <button type="button" class="tab active" data-view="checklist">Checklist</button>
+  <button type="button" class="tab" data-view="roadmap">Roadmap to Platinum</button>
+  <button type="button" class="tab" data-view="missable">Missable &amp; Warnings</button>
+  <button type="button" class="tab" data-view="sources">Sources &amp; Method</button>
+</nav>
+
+<main>
+  <section id="view-checklist" class="view active">
+    <div class="controls">
+      <label class="search">Search
+        <input id="search" type="search" placeholder="Trophy, mission or keyword…" autocomplete="off">
+      </label>
+      <fieldset class="kind-filters" aria-label="Filter by kind">
+        <legend>Kind</legend>
+        <button type="button" class="chip active" data-kind="all">All <span class="n" id="n-all"></span></button>
+        <button type="button" class="chip" data-kind="story">Story <span class="n" id="n-story"></span></button>
+        <button type="button" class="chip" data-kind="missable">Missable <span class="n" id="n-missable"></span></button>
+        <button type="button" class="chip" data-kind="collectibles">Collectibles <span class="n" id="n-collectibles"></span></button>
+        <button type="button" class="chip" data-kind="activities">Activities <span class="n" id="n-activities"></span></button>
+        <button type="button" class="chip" data-kind="online">Online <span class="n" id="n-online"></span></button>
+      </fieldset>
+      <label class="grade-filter">Grade
+        <select id="grade">
+          <option value="all">All grades</option>
+          <option value="platinum">Platinum</option>
+          <option value="gold">Gold</option>
+          <option value="silver">Silver</option>
+          <option value="bronze">Bronze</option>
+        </select>
+      </label>
+      <label class="toggle"><input id="earnedOnly" type="checkbox"> Earned only</label>
+      <label class="toggle spoiler-toggle"><input id="spoilers" type="checkbox" checked> Hide story spoilers</label>
+    </div>
+    <div class="io-row">
+      <button id="exportBtn" type="button">Export progress (.json)</button>
+      <label class="import-btn">Import progress <input id="importFile" type="file" accept="application/json,.json"></label>
+      <button id="resetBtn" type="button" class="danger">Reset progress</button>
+      <p class="io-note" id="ioNote" role="status"></p>
+    </div>
+    <p class="result-count" id="resultCount"></p>
+    <ul class="trophy-list" id="trophyList"></ul>
+    <p class="empty" id="emptyState" hidden>No trophies match these filters. Try clearing the search or choosing another kind.</p>
+  </section>
+
+  <section id="view-roadmap" class="view">
+    <div id="roadmapRoot"></div>
+  </section>
+
+  <section id="view-missable" class="view">
+    <div id="missableRoot"></div>
+  </section>
+
+  <section id="view-sources" class="view">
+    <h2>Sources &amp; method</h2>
+    <p>Every guide on this page is written in our own words for this entry. The official trophy names, descriptions and grades are shown exactly as PlayStation publishes them; each trophy's guide names the source its facts come from, beside the guide, so a reader can check it. We never copy another guide's text.</p>
+    <ul class="source-list">
+      <li><strong>Official list</strong> — Exophase and PSNProfiles, 18 Nov 2026: the 55 names, descriptions, grades and hidden flags. The two trackers agree on every name, description and grade. Reported by Push Square the same day.</li>
+      <li><strong>Guides &amp; roadmap</strong> — PowerPyx, <a href="https://www.powerpyx.com/gta-6-grand-theft-auto-vi-trophy-guide-roadmap/">GTA 6 Trophy Guide &amp; Roadmap</a>: the step-by-step roadmap, the mission and questline details, the counts (250 stunts, 42 shooting-range challenges, 14 drone-race locations, 18 meditation spots, 39 gang operations, 8 bank jobs), the 100% checklist thresholds and the missable-meditation warning.</li>
+      <li><strong>Cross-checks</strong> — Output Lag, <a href="https://outputlag.com/guides/gta-6-trophy-list/">GTA 6 Trophy List</a>: the 200-hour platinum estimate, the no-mission-replay warning, the one-missable-trophy finding and the five trophies with no confirmed unlock method at launch. GTA Vice City Hub, <a href="https://www.gtavicecityhub.com/achievements">GTA 6 Achievements</a>: the 35-task shape of the 100% checklist and the single-player-only confirmation.</li>
+    </ul>
+    <h3>What is still unconfirmed</h3>
+    <p>Five trophies had no confirmed unlock method at launch — In The Beginning…, Capital Offense, Bad Luck, I Guess, The Truth Is Out There and Ten Pin. Their guides say so plainly and give the best current lead from PowerPyx instead of inventing a method. Check the sources above for updates as players confirm them.</p>
+    <h3>Privacy</h3>
+    <p>Your checklist is saved only in this browser (localStorage). Export writes a file you control; import reads a file you choose. The page makes no network request at all — open it with the network off and everything still works.</p>
+  </section>
+</main>
+
+<footer>
+  <p>Leonida Legend is an unofficial fan-made guide. Grand Theft Auto and GTA are trademarks of Take-Two Interactive; this page uses no Rockstar logo, artwork, box art or game screenshots. Trophy names and descriptions are shown as PlayStation publishes them. Built for the make.fun GTA 6 Trophy Guide bounty.</p>
+</footer>
+
+<script type="module" src="app.js"></script>
+</body>
+</html>
